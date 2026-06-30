@@ -21,7 +21,7 @@ function Home() {
         const newGrid = Array.from(
             {length: rows},
             () => Array.from({length: cols},
-                () => false)
+                () => 0)
         );
         setGrid(newGrid);
     }
@@ -33,7 +33,7 @@ function Home() {
             row.map((cell, colIndex) => {
                 if (rowIndex === r && colIndex === c){
                     console.log(cell)
-                    return !cell;
+                    return cell === 0 ? 1 : 0;
                 }
                 console.log(cell)
                 return cell;
@@ -53,19 +53,27 @@ function Home() {
 
         const interval = setInterval(() => {
             const nextGrid = currentGrid.map((row, rIndex) =>
-            row.map((cell, cIndex) => {
-                if (cell) return true; //already grass
+                row.map((cell, cIndex) => {
+                    if (cell === 3) return 3; //already grass
 
-                //checking neighbors
-                const neighbors = [
-                    currentGrid[rIndex - 1]?.[cIndex],
-                    currentGrid[rIndex + 1]?.[cIndex],
-                    currentGrid[rIndex]?.[cIndex - 1],
-                    currentGrid[rIndex]?.[cIndex + 1]
-                ];
+                    if (cell > 0) return cell + 1;
 
-                return neighbors.includes(true);
-            }));
+                    //checking neighbors
+                    const neighbors = [
+                        currentGrid[rIndex - 1]?.[cIndex],
+                        currentGrid[rIndex + 1]?.[cIndex],
+                        currentGrid[rIndex]?.[cIndex - 1],
+                        currentGrid[rIndex]?.[cIndex + 1],
+                        currentGrid[rIndex - 1]?.[cIndex - 1],
+                        currentGrid[rIndex - 1]?.[cIndex + 1],
+                        currentGrid[rIndex + 1]?.[cIndex - 1],
+                        currentGrid[rIndex + 1]?.[cIndex + 1],
+                    ];
+
+                    //if any neighbor is at least stage 1, sprout here
+                    return neighbors.some(n => n > 0) ? 1 : 0;
+                })
+            );
 
             //update the grid
             setGrid(nextGrid);
@@ -74,7 +82,7 @@ function Home() {
             currentGrid = nextGrid;
 
             //stop when fully grown
-            const allFilled = nextGrid.every(row => row.every(cell => cell));
+            const allFilled = nextGrid.every(row => row.every(cell => cell === 3));
             if (allFilled){
                 clearInterval(interval);
                 setIsSimulating(false);
@@ -123,7 +131,7 @@ function Home() {
                     row.map((cell, cIndex) => (
                         <div
                             key={`${rIndex}-${cIndex}`}
-                            className={`cell ${cell ? 'selected' : ''}`}
+                            className={`cell stage-${cell}`}
                             onClick={() => !isSimulating && toggleCell(rIndex, cIndex)}
                         >
                         </div>

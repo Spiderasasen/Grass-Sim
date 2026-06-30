@@ -7,6 +7,27 @@
 
 #simButton{margin-top: 10px;}
 
+/*stages*/
+.stage-0 {
+    background-color: #d9e8d9; /* empty */
+}
+
+.stage-1 {
+    background-color: #b7e0b7; /* sprout */
+    transition: background-color 0.3s ease;
+}
+
+.stage-2 {
+    background-color: #7ccf7c; /* growing */
+    transition: background-color 0.3s ease;
+}
+
+.stage-3 {
+    background-color: #5a9c5a; /* full grass */
+    transition: background-color 0.3s ease;
+}
+
+
 /*grid*/
 .grid {
     justify-content: center;
@@ -15,7 +36,6 @@
 .cell {
     width: 30px;
     height: 30px;
-    background-color: #d9e8d9;
     border: 1px solid #8fbf8f;
 }
 
