@@ -71,7 +71,7 @@ function Home() {
                     ];
 
                     //if any neighbor is at least stage 1, sprout here
-                    return neighbors.some(n => n > 0) ? 1 : 0;
+                    return neighbors.some(n => n > 0) && Math.random() < 0.6 ? 1 : 0;
                 })
             );
 
