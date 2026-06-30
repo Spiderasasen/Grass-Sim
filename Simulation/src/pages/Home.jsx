@@ -2,12 +2,14 @@ import Header from "../conponents/Header.jsx";
 import Footer from "../conponents/Footer.jsx";
 import "../styles/main.css";
 import {useState} from "react";
+import "../styles/grid-style.css"
 
 function Home() {
     const [rows, setRows] = useState(0);
     const [cols, setCols] = useState(0);
     const [grid, setGrid] = useState([]);
 
+    //creates the grid
     const createGrid = () => {
         console.log(`Rows: ${rows}, Cols: ${cols}`);
         const newGrid = Array.from(
@@ -34,16 +36,35 @@ function Home() {
                 {/*where the user will input the size of the grid*/}
                 <div className="input-container">
                     <input type="number" placeholder="0" onChange={(e) => setRows(Number(e.target.value))}/>
-                    <p>X</p>
+                    <p> X </p>
                     <input type="number" placeholder="0" onChange={(e) => setCols(Number(e.target.value))}/>
                 </div>
 
                 <button onClick={createGrid}>Create Grid</button>
             </div>
 
-            {grid && <div className="grid-container">
-                {/*  grid cells will be created here  */}
-            </div>}
+            {/*all this code to make the grid*/}
+            {grid.length > 0 && (
+                <div
+                    className="grid"
+                    style={{
+                        display: "grid",
+                        gridTemplateColumns: `repeat(${cols}, 30px)`,
+                        gap: "4px",
+                        marginTop: "30px"
+                    }}
+                >
+                    {/*  grid cells will be created here  */}
+                    {grid.map((row, rIndex) =>
+                    row.map((cell, cIndex) => (
+                        <div
+                            key={`${rIndex}-${cIndex}`}
+                            className="cell"
+                        >
+                        </div>
+                    )))}
+                </div>
+            )}
         </main>
 
         <Footer/>

@@ -1,0 +1,10 @@
+.grid {
+    justify-content: center;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    background-color: #d9e8d9;
+    border: 1px solid #8fbf8f;
+}
