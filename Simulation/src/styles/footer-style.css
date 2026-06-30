@@ -1,0 +1,24 @@
+footer {
+    margin-top: 60px;
+    padding: 25px;
+    background-color: #1e2a1f; /* dark green */
+    color: #d4e8d4; /* soft pale green */
+    text-align: center;
+    border-top: 3px solid #3f5c3f;
+}
+
+footer p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #9bd49b;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}

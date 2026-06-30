@@ -1,0 +1,72 @@
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Main title */
+main h1 {
+    font-size: 2.2rem;
+    color: #2f4f2f; /* deep natural green */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Section title */
+main h2 {
+    font-size: 1.5rem;
+    color: #3b5f3b;
+    margin-bottom: 20px;
+}
+
+/* ============================
+   INPUT AREA
+   ============================ */
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.input-container input {
+    width: 80px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #8fbf8f;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-container input:focus {
+    border-color: #5a9c5a;
+}
+
+.input-container p {
+    font-size: 1.3rem;
+    color: #2f4f2f;
+    font-weight: bold;
+}
+
+/* ============================
+   BUTTON
+   ============================ */
+button {
+    background-color: #5a9c5a;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+button:hover {
+    background-color: #4a854a;
+    transform: translateY(-2px);
+}

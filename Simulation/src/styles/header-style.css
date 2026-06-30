@@ -1,0 +1,53 @@
+/* Header container */
+.header {
+    background-color: #1e2a1f; /* dark military green */
+    padding: 20px;
+    border-bottom: 3px solid #3f5c3f; /* lighter green accent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Title */
+.header h1 {
+    color: #d4e8d4; /* soft pale green */
+    font-size: 2rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Navigation */
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nav items */
+.header nav ul li a {
+    color: #c7d9c7;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 12px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    letter-spacing: 1px;
+}
+
+/* Hover effect */
+.header nav ul li a:hover {
+    border-color: #6fa96f;
+    color: #ffffff;
+}
+
+/* Active link */
+.header nav ul li a.active {
+    border-color: #9bd49b;
+    color: #ffffff;
+    font-weight: bold;
+}
