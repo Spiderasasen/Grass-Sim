@@ -1,10 +1,13 @@
+/*ids*/
 #hint{
-    display: none;
     font-size: 1rem;
     color: #3b5f3b;
     font-family: Arial, sans-serif;
 }
 
+#simButton{margin-top: 10px;}
+
+/*grid*/
 .grid {
     justify-content: center;
 }
@@ -25,4 +28,9 @@
 .cell:active {
     background-color: #6fa96f;
     transition: background-color 0.2s ease;
+}
+
+.cell.selected {
+    background-color: #5a9c5a;
+    border-color: #3f7f3f;
 }
