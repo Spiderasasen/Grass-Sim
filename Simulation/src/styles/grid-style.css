@@ -1,3 +1,10 @@
+#hint{
+    display: none;
+    font-size: 1rem;
+    color: #3b5f3b;
+    font-family: Arial, sans-serif;
+}
+
 .grid {
     justify-content: center;
 }
@@ -7,4 +14,15 @@
     height: 30px;
     background-color: #d9e8d9;
     border: 1px solid #8fbf8f;
+}
+
+.cell:hover {
+    background-color: #9bd49b;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cell:active {
+    background-color: #6fa96f;
+    transition: background-color 0.2s ease;
 }

@@ -8,9 +8,12 @@ function Home() {
     const [rows, setRows] = useState(0);
     const [cols, setCols] = useState(0);
     const [grid, setGrid] = useState([]);
+    const hint = document.getElementById("hint");
 
     //creates the grid
     const createGrid = () => {
+        hint.style.display = "block";
+
         console.log(`Rows: ${rows}, Cols: ${cols}`);
         const newGrid = Array.from(
             {length: rows},
@@ -41,6 +44,7 @@ function Home() {
                 </div>
 
                 <button onClick={createGrid}>Create Grid</button>
+                <h4 id="hint">Please select where to add grass</h4>
             </div>
 
             {/*all this code to make the grid*/}
