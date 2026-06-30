@@ -10,6 +10,7 @@ function Home() {
     const [grid, setGrid] = useState([]);
     const [showHint, setShowHint] = useState(false);
     const [simButton, setSimButton] = useState(false);
+    const [isSimulating, setIsSimulating] = useState(false);
 
     //creates the grid
     const createGrid = () => {
@@ -42,6 +43,45 @@ function Home() {
         //redraws the grid
         setGrid(updated);
     }
+
+    const startSimulation = () => {
+        console.log("Simulation started");
+
+        setIsSimulating(true);
+
+        let currentGrid = grid;
+
+        const interval = setInterval(() => {
+            const nextGrid = currentGrid.map((row, rIndex) =>
+            row.map((cell, cIndex) => {
+                if (cell) return true; //already grass
+
+                //checking neighbors
+                const neighbors = [
+                    currentGrid[rIndex - 1]?.[cIndex],
+                    currentGrid[rIndex + 1]?.[cIndex],
+                    currentGrid[rIndex]?.[cIndex - 1],
+                    currentGrid[rIndex]?.[cIndex + 1]
+                ];
+
+                return neighbors.includes(true);
+            }));
+
+            //update the grid
+            setGrid(nextGrid);
+
+            //update the reference
+            currentGrid = nextGrid;
+
+            //stop when fully grown
+            const allFilled = nextGrid.every(row => row.every(cell => cell));
+            if (allFilled){
+                clearInterval(interval);
+                setIsSimulating(false);
+                console.log("Simulation finished");
+            }
+        }, 300);
+    };
 
     return (
     <div>
@@ -84,7 +124,7 @@ function Home() {
                         <div
                             key={`${rIndex}-${cIndex}`}
                             className={`cell ${cell ? 'selected' : ''}`}
-                            onClick={() => toggleCell(rIndex, cIndex)}
+                            onClick={() => !isSimulating && toggleCell(rIndex, cIndex)}
                         >
                         </div>
                     )))}
