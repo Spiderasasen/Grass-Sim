@@ -1,8 +1,23 @@
 import Header from "../conponents/Header.jsx";
 import Footer from "../conponents/Footer.jsx";
 import "../styles/main.css";
+import {useState} from "react";
 
 function Home() {
+    const [rows, setRows] = useState(0);
+    const [cols, setCols] = useState(0);
+    const [grid, setGrid] = useState([]);
+
+    const createGrid = () => {
+        console.log(`Rows: ${rows}, Cols: ${cols}`);
+        const newGrid = Array.from(
+            {length: rows},
+            () => Array.from({length: cols},
+                () => false)
+        );
+        setGrid(newGrid);
+    }
+
     return (
     <div>
       {/*the header*/}
@@ -18,13 +33,17 @@ function Home() {
 
                 {/*where the user will input the size of the grid*/}
                 <div className="input-container">
-                    <input type="number" placeholder="0"/>
+                    <input type="number" placeholder="0" onChange={(e) => setRows(Number(e.target.value))}/>
                     <p>X</p>
-                    <input type="number" placeholder="0"/>
+                    <input type="number" placeholder="0" onChange={(e) => setCols(Number(e.target.value))}/>
                 </div>
 
-                <button>Create Grid</button>
+                <button onClick={createGrid}>Create Grid</button>
             </div>
+
+            {grid && <div className="grid-container">
+                {/*  grid cells will be created here  */}
+            </div>}
         </main>
 
         <Footer/>
