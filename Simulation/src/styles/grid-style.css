@@ -54,3 +54,19 @@
     background-color: #5a9c5a;
     border-color: #3f7f3f;
 }
+
+.grass-select-container {
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+.grass-select-container select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.selected-grass-info {
+    margin-top: 10px;
+    color: #2f4f2f;
+}

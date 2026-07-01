@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/grid-style.css";
+import grassData from "../data/grass.json";
 
 function GrassSimulation() {
     const [rows, setRows] = useState(0);
@@ -8,10 +9,13 @@ function GrassSimulation() {
     const [showHint, setShowHint] = useState(false);
     const [simButton, setSimButton] = useState(false);
     const [isSimulating, setIsSimulating] = useState(false);
+    const [selectedGrass, setSelectedGrass] = useState(null);
+    const [selectedGrassInfo, setSelectedGrassInfo] = useState(false);
 
     const createGrid = () => {
         setShowHint(true);
         setSimButton(true);
+        setSelectedGrassInfo(true);
 
         const newGrid = Array.from(
             { length: rows },
@@ -38,6 +42,9 @@ function GrassSimulation() {
         setIsSimulating(true);
 
         let currentGrid = grid;
+
+        //adding the speed
+        const speed = selectedGrass ? selectedGrass.growthSpeed : 300;
 
         const interval = setInterval(() => {
             const nextGrid = currentGrid.map((row, rIndex) =>
@@ -68,7 +75,7 @@ function GrassSimulation() {
                 clearInterval(interval);
                 setIsSimulating(false);
             }
-        }, 300);
+        }, speed);
     };
 
     return (
@@ -111,6 +118,36 @@ function GrassSimulation() {
                             ></div>
                         ))
                     )}
+                </div>
+            )}
+
+            {/*where the user will select the grass*/}
+            {selectedGrassInfo && (
+                <div className="grass-select-container">
+                    <label>Select your Grass:</label>
+                    <select
+                        onChange={(e) => {
+                            const grass = grassData.grassTypes.find(
+                                g => g.id === e.target.value
+                            );
+                            setSelectedGrass(grass);
+                        }}
+                    >
+                        <option value="">Select Grass</option>
+
+                        {grassData.grassTypes.map(grass => (
+                            <option key={grass.id} value={grass.id}>{grass.name}</option>
+                        ))}
+
+                        {selectedGrass && (
+                            <p className="selected-grass-info">
+                                <strong>{selectedGrass.name}</strong> selected
+                                <br/>
+                                Growth Speed: {selectedGrass.growthSpeed}ms
+                            </p>
+                        )}
+
+                    </select>
                 </div>
             )}
 
