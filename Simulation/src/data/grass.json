@@ -1,0 +1,85 @@
+{
+  "grassTypes": [
+    {
+      "id": "bermuda",
+      "name": "Bermuda Grass",
+      "category": "natural",
+      "description": "A fast-growing warm-season grass common in the southern United States. Very durable, thrives in full sun, and spreads aggressively.",
+      "growthSpeed": 200,
+      "shadeTolerance": "low",
+      "region": "warm-season"
+    },
+    {
+      "id": "tall_fescue",
+      "name": "Tall Fescue",
+      "category": "natural",
+      "description": "A cool-season grass widely used in North Carolina. Deep roots make it drought tolerant. Grows in sun or partial shade.",
+      "growthSpeed": 350,
+      "shadeTolerance": "medium",
+      "region": "cool-season"
+    },
+    {
+      "id": "kentucky_bluegrass",
+      "name": "Kentucky Bluegrass",
+      "category": "natural",
+      "description": "A dense, dark-green cool-season grass. Spreads through underground rhizomes and creates a lush lawn.",
+      "growthSpeed": 300,
+      "shadeTolerance": "medium",
+      "region": "cool-season"
+    },
+    {
+      "id": "perennial_ryegrass",
+      "name": "Perennial Ryegrass",
+      "category": "natural",
+      "description": "A quick-germinating grass often used for overseeding. Bright green color and fast establishment.",
+      "growthSpeed": 150,
+      "shadeTolerance": "low",
+      "region": "cool-season"
+    },
+    {
+      "id": "zoysia",
+      "name": "Zoysia Grass",
+      "category": "natural",
+      "description": "A dense, carpet-like warm-season grass. Slow-growing but extremely heat tolerant and low maintenance.",
+      "growthSpeed": 500,
+      "shadeTolerance": "medium",
+      "region": "warm-season"
+    },
+    {
+      "id": "centipede",
+      "name": "Centipede Grass",
+      "category": "natural",
+      "description": "A low-maintenance warm-season grass popular in the Southeast. Slow-growing and prefers acidic soil.",
+      "growthSpeed": 450,
+      "shadeTolerance": "medium",
+      "region": "warm-season"
+    },
+    {
+      "id": "bahia",
+      "name": "Bahia Grass",
+      "category": "natural",
+      "description": "A tough, drought-resistant grass commonly used in rural or sandy areas. Low maintenance and durable.",
+      "growthSpeed": 400,
+      "shadeTolerance": "low",
+      "region": "warm-season"
+    },
+    {
+      "id": "st_augustine",
+      "name": "St. Augustine Grass",
+      "category": "natural",
+      "description": "A thick-bladed warm-season grass that thrives in shade. Usually sold as sod or plugs rather than seed.",
+      "growthSpeed": 350,
+      "shadeTolerance": "high",
+      "region": "warm-season"
+    },
+    {
+      "id": "artificial",
+      "name": "Artificial Turf",
+      "category": "synthetic",
+      "description": "Synthetic grass used for low-maintenance lawns. No watering, mowing, or growth required.",
+      "growthSpeed": 0,
+      "shadeTolerance": "high",
+      "region": "all"
+    }
+  ]
+}
