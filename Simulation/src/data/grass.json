@@ -1,6 +1,7 @@
 {
   "grassTypes": [
     {
+      "index": 1,
       "id": "bermuda",
       "name": "Bermuda Grass",
       "category": "natural",
@@ -10,6 +11,7 @@
       "region": "warm-season"
     },
     {
+      "index": 2,
       "id": "tall_fescue",
       "name": "Tall Fescue",
       "category": "natural",
@@ -19,6 +21,7 @@
       "region": "cool-season"
     },
     {
+      "index": 3,
       "id": "kentucky_bluegrass",
       "name": "Kentucky Bluegrass",
       "category": "natural",
@@ -28,6 +31,7 @@
       "region": "cool-season"
     },
     {
+      "index": 4,
       "id": "perennial_ryegrass",
       "name": "Perennial Ryegrass",
       "category": "natural",
@@ -37,6 +41,7 @@
       "region": "cool-season"
     },
     {
+      "index": 5,
       "id": "zoysia",
       "name": "Zoysia Grass",
       "category": "natural",
@@ -46,6 +51,7 @@
       "region": "warm-season"
     },
     {
+      "index": 6,
       "id": "centipede",
       "name": "Centipede Grass",
       "category": "natural",
@@ -55,6 +61,7 @@
       "region": "warm-season"
     },
     {
+      "index": 7,
       "id": "bahia",
       "name": "Bahia Grass",
       "category": "natural",
@@ -64,6 +71,7 @@
       "region": "warm-season"
     },
     {
+      "index": 8,
       "id": "st_augustine",
       "name": "St. Augustine Grass",
       "category": "natural",
@@ -73,6 +81,7 @@
       "region": "warm-season"
     },
     {
+      "index": 9,
       "id": "artificial",
       "name": "Artificial Turf",
       "category": "synthetic",

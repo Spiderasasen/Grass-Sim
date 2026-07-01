@@ -1,0 +1,59 @@
+.grass-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grass-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #dfe6df;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.grass-card-title {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #2f4f2f;
+}
+
+.grass-card-description {
+    margin-top: 10px;
+    color: #4a5f4a;
+    line-height: 1.4;
+}
+
+.grass-card-info {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.grass-tag {
+    background: #e8f5e8;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    color: #2f4f2f;
+    border: 1px solid #cfe3cf;
+}
+
+/* category-specific colors */
+.grass-tag.natural {
+    background: #dff7df;
+    border-color: #bfe3bf;
+}
+
+.grass-tag.synthetic {
+    background: #e0e0ff;
+    border-color: #bfbfff;
+}
